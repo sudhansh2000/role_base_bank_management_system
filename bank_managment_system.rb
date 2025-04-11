@@ -1,7 +1,7 @@
 require_relative 'bank_module'
 # Bank class
 class Bank
-  attr_accessor :accounts, :transactions, :account_number_generator
+  attr_accessor :accounts, :transactions, :accoun_number_counter
 
   include BankMethods
 
@@ -12,15 +12,15 @@ class Bank
     }
 
     self.transactions = []
-    self.account_number_generator = 1002
+    self.accoun_number_counter = 1002
   end
 
   def admin
     while true
       puts '*************************************'
-      puts 'Enter 1 to add account'
-      puts 'Enter 2 to check all the accounts'
-      puts 'Enter 3 to check all  the transations'
+      puts 'Enter 1 to add new account'
+      puts 'Enter 2 to display all the accounts'
+      puts 'Enter 3 to display all  the transations'
       puts 'Enter 4 to deposite money'
       puts 'Enter 5 to withdraw money '
       puts 'Enter 6 to exit the program'
@@ -129,9 +129,9 @@ class Bank
       break if valid_balance(init_balance)
     end
 
-    @accounts [@account_number_generator] = { 'name' => name, 'mobile' => mobile_no, 'balance' => init_balance.to_i }
-    @account_number_generator += 1
-    puts "✅ account added sucessfully with account number #{@account_number_generator - 1} and information as #{@accounts[@account_number_generator - 1]}"
+    @accounts [@accoun_number_counter] = { 'name' => name, 'mobile' => mobile_no, 'balance' => init_balance.to_i }
+    @accoun_number_counter += 1
+    puts "✅ account added sucessfully with account number #{@accoun_number_counter - 1} and information as #{@accounts[@accoun_number_counter - 1]}"
   end
 
   # function to add money to specifc account
