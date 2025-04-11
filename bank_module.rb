@@ -19,4 +19,12 @@ module BankMethods
     end
     true
   end
+
+  def check_acc_equality(acc_number, rec_acc_number)
+    if acc_number == rec_acc_number
+      puts '⚠️  you cannot transfer money to your own account, please try again'
+      return true
+    end
+    false
+  end
 end
