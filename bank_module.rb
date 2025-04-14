@@ -2,7 +2,8 @@
 module BankMethods
   # to check valid account number
   def validate_account_number(acc_number)
-    return true if @accounts[acc_number]
+    account_obj = accounts.find { |acc| acc.account_number == acc_number }
+    return true if account_obj
 
     puts "⚠️ Account not found with account number #{acc_number} please check the number"
     false
